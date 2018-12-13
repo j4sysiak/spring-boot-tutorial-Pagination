@@ -22,4 +22,9 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/addstatus.jsp" />
 	</definition>
 
+	<definition name="app.viewStatus" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/viewstatus.jsp" />
+	</definition>
+	
+
 </tiles-definitions>
