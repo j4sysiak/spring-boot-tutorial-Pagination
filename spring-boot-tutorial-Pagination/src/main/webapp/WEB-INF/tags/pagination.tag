@@ -3,7 +3,13 @@
 <%@ attribute name="page" required="true" type="org.springframework.data.domain.Page" %>
 <%@ attribute name="url" required="true" %>
 
+<c:set var="block" value="${empty param.b ? 0 : param.b}" />
+
+<p>Block: ${block}</p>
+
 <div class="pagination">
+
+	<a href="${url}?b=${block-1}">&lt;&lt;</a> 
 
 	<c:forEach var="pageNumber" begin="1" end="${page.totalPages}">
 
@@ -25,6 +31,9 @@
 				 |
 				</c:if>
 	</c:forEach>
+	
+	<a href="${url}?b=${block+1}">&gt;&gt;</a> 
+	
 </div>
  
 
