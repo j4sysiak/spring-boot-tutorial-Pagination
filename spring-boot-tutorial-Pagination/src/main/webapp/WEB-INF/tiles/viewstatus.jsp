@@ -5,7 +5,8 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="jwp" %>
 
 
-<%-- Page number: ${param.p} --%>
+   
+ <p>Page number: ${param.p}</p>
 
 <c:url var="url" value="/viewstatus" />
  
@@ -13,7 +14,7 @@
 
 	<div class="col-md-8 col-md-offset-2">
 	
- <%-- 		<jwp:pagination url="${url}" page="${page}"/> --%>
+      <jwp:pagination url="${url}" page="${page}" size="${3}" /> 
 	 
 		<c:forEach var="statusUpdate" items="${page.content}">
  
