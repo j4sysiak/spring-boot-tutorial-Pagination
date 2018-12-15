@@ -13,7 +13,7 @@
 
 	<div class="col-md-8 col-md-offset-2">
 	
-<%-- 		<jwp:pagination url="${url}" page="${page}"/> --%>
+ <%-- 		<jwp:pagination url="${url}" page="${page}"/> --%>
 	 
 		<c:forEach var="statusUpdate" items="${page.content}">
  
