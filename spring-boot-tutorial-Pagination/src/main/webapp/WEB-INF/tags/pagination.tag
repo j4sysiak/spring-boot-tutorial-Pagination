@@ -21,14 +21,16 @@
  
 <div class="pagination">
 
-	<a href="${url}?b=${block-1}">&lt;&lt;</a> 
+	<c:if test="${block != 0}">
+		<a href="${url}?b=${block-1}&p=${(block-1)*size + 1}">&lt;&lt;</a>
+	</c:if>
 
 	<c:forEach var="pageNumber" begin="${startPage}" end="${endPage}">
 
 		<c:choose>
 
 			<c:when test="${page.number != pageNumber - 1}">
-				<a href="${url}?p=${pageNumber}"><c:out value="${pageNumber}" /></a>
+				<a href="${url}?p=${pageNumber}&b=${block}"><c:out value="${pageNumber}" /></a>
 			</c:when>
 
 			<c:otherwise>
@@ -39,12 +41,15 @@
 
 
 
-		<c:if test="${pageNumber != page.totalPages}">
+		<c:if test="${pageNumber != endPage}">
 				 |
-				</c:if>
+		</c:if>
 	</c:forEach>
 	
-	<a href="${url}?b=${block+1}">&gt;&gt;</a> 
+	
+	<c:if test="${endPage != page.totalPages}">
+		<a href="?b=${block+1}&p=${(block+1)*size + 1}">&gt;&gt;</a>
+	</c:if>
 	
 </div>
  
